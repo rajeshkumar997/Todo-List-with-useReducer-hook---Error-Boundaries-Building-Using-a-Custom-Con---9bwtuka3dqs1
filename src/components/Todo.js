@@ -1,31 +1,13 @@
 import React from "react";
-const Todo = ({ dispatch, state }) => {
+import "../styles/App.css";
 
-  console.log("state is ",state);
+const Navbar = () => {
   return (
-
-          <>
-            {state.map((item) => {
-              
-              return (
-                <div className="todo" key={item.id}> 
-                  <div id={item.id} className="todo-title">
-                  {item.title}
-                  <button
-                    onClick={() =>
-                      dispatch({ type: "DELETE",payload:{title:item.title,id:item.id} })
-                    }
-                    className="todo-delete"
-                  >
-                    DELETE
-                  </button>
-                </div>
-                
-                </div>
-              );
-            })}
-            </>
+    <div className="Navbar">
+      <div className="logo">Todo List</div>
+      <button className="theme">Theme</button>
+    </div>
   );
 };
 
-export { Todo }
+export default Navbar;
