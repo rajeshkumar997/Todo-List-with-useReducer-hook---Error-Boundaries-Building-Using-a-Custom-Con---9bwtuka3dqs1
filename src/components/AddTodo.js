@@ -18,6 +18,7 @@ const AddTodo = ({ dispatch }) => {
         setVal("");
     }
 
+
     function inputFun(e) {
         setVal(e.target.value);
     }
