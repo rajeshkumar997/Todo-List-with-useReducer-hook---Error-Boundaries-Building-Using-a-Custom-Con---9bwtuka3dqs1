@@ -11,6 +11,8 @@ const App = () => {
     <div id="main">
       <AddTodo />
      {/* Render list of Todo Components here */}
+      <AddTodo dispatch={dispatch} state={state} />
+      <Todo dispatch={dispatch} state={state}/>
     </div>
   )
 }
