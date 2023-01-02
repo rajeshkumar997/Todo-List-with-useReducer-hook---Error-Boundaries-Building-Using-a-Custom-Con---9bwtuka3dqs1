@@ -1,19 +1,28 @@
 const todoReducer = (state, action) => {
-    switch (action.type) {
-    import React from "react";
-import "../styles/App.css";
-
-const Navbar = () => {
-  return (
-    <div className="Navbar">
-      <div className="logo">Todo List</div>
-      <button className="theme">Theme</button>
-    </div>
-  );
+  switch (action.type) {
+    case "ADD": {
+      return {
+        todos: [
+          ...state.todos,
+          {
+            title: action.value,
+            id:
+              new Date().toLocaleDateString() +
+              "" +
+              new Date().toLocaleTimeString(),
+          },
+        ],
+      };
+    }
+    case "DELETE": {
+      return {
+        todos: action.data,
+      };
+    }
+    default: {
+      return state;
+    }
+  }
 };
 
-export default Navbar;
-    }
-}
-
-export { todoReducer }
+export { todoReducer };
