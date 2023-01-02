@@ -1,13 +1,14 @@
 import React from "react";
 import "../styles/App.css";
-
-const Navbar = () => {
+const Todo = ({ title, id, handleDelete }) => {
   return (
-    <div className="Navbar">
-      <div className="logo">Todo List</div>
-      <button className="theme">Theme</button>
+    <div className="todo">
+      <div className="todo-title">{title}</div>
+      <button className="todo-delete" onClick={() => handleDelete(id)}>
+        Delete
+      </button>
     </div>
   );
 };
 
-export default Navbar;
+export { Todo };
